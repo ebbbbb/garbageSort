@@ -1,0 +1,57 @@
+server:
+  port: 8899
+  servlet:
+    context-path: /wx
+#  ssl:
+#    key-store: classpath:qackqi-com-tomcat-1024040222.jks
+#    key-store-password: huangmq123
+#    key-store-type: JKS
+
+# 百度请求api 管理
+baidu:
+  appid: 30950666
+  apikey: Z1PZk9a9Qk2DnyX3A2lON1pP
+  secretkey: vcPeSTl7ossfW8phhOBF4LunleFQCUtW
+  apikeyrecord: PNd5yF8BP7ELzC81XF73odOO
+  secretkeyrecord: FgiBmf9Sgg7b7Vsipp9B7whPHzr31agX
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://gz-cynosdbmysql-grp-0gd2a60r.sql.tencentcdb.com:28701/garbageSort?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    username: root  # 配置数据库用户
+    password: '!P#md%75p4ZZ&5eY'  # 配置数据库密码
+#    url: jdbc:mysql://localhost:3306/garbageSort?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+#    username: root  # 配置数据库用户
+#    password: 123456  # 配置数据库密码
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: cn.lxsir.uniapp.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+
+# 文件路径管理
+upload:
+  image:
+    path: /opt/myservice/filepath/image/
+#    path: /Users/luoxiang/testpath/image/    # linux or mac
+#    path: E:/testpath/image/                 # windows
+  record:
+    path: /opt/myservice/filepath/record/
+#    path: /Users/luoxiang/testpath/record/   # linux or mac
+#    path: E:/testpath/record/   # windows
+  excel:
+    path: /opt/myservice/filepath/excel/
+#    path: E:/testpath/excel/
+
+
+
